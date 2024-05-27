@@ -7,7 +7,7 @@ const HomeScreen = () => {
     <SafeAreaView>
       <View>
         <Text>Home Screen</Text>
-        <Link href="login">Login</Link>
+        <Link href="/login/firstAcess">Login</Link>
       </View>
     </SafeAreaView>
   );
