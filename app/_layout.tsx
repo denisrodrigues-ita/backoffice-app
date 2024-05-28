@@ -1,9 +1,9 @@
-import { PaperProvider } from "react-native-paper";
+import * as SplashScreen from "expo-splash-screen";
+import { ThemeProvider } from "@rneui/themed";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { useEffect } from "react";
 import { theme } from "@/theme";
-import * as SplashScreen from "expo-splash-screen";
 import "react-native-reanimated";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -25,12 +25,12 @@ export default function RootLayout() {
   }
 
   return (
-    <PaperProvider theme={theme}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-        }}
-      />
-    </PaperProvider>
+    <ThemeProvider theme={theme}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+          }}
+        />
+    </ThemeProvider>
   );
 }

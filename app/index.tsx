@@ -5,13 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
+    <>
       <Header />
       <View>
         <Text>Home Screen</Text>
         <Link href="/login/firstAcess">Login</Link>
       </View>
-    </SafeAreaView>
+    </>
   );
 };
 
