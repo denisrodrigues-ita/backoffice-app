@@ -5,6 +5,7 @@ export const getStyles = (theme: ThemeOptions, isVisible: boolean) =>
   StyleSheet.create({
     safeAreaView: {
       backgroundColor: theme.colors.primary,
+      zIndex: 1,
     },
     container: {
       flexDirection: "row",
@@ -17,17 +18,20 @@ export const getStyles = (theme: ThemeOptions, isVisible: boolean) =>
       alignItems: "flex-end",
       backgroundColor: theme.colors.primary,
       position: "absolute",
-      top: 28,
+      top: 32,
       right: 4,
       gap: 8,
-      width: 100,
+      width: 140,
       display: `${isVisible ? "flex" : "none"}`,
+      borderRadius: 4,
     },
     dropdownContent: {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "flex-end",
-      padding: 8,
+      padding: 12,
+      width: "100%",
+      textAlign: "right",
       gap: 4,
     },
     menuView: {

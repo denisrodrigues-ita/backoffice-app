@@ -1,16 +1,30 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View } from "react-native";
 import { Header as HeaderUi, useThemeMode } from "@rneui/themed";
 import { useTheme } from "@rneui/themed";
 import { Feather } from "@expo/vector-icons";
 import { getStyles } from "./styles";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Header = () => {
   const [isVisible, setIsVisible] = React.useState(false);
   const { mode, setMode } = useThemeMode();
   const { theme } = useTheme();
   const styles = getStyles(theme, isVisible);
+
+  const actions: Action[] = [
+    {
+      label: "Log-out",
+      onPress: () => console.log("log-out"),
+      icon: "log-out",
+    },
+    {
+      label: `Modo ${mode === "dark" ? "Light" : "Dark"}`,
+      onPress: () => setMode(mode === "light" ? "dark" : "light"),
+      icon: mode === "dark" ? "sun" : "moon",
+    },
+  ];
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
@@ -20,29 +34,19 @@ const Header = () => {
         rightComponent={
           <View style={styles.menuView}>
             <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
-              <Feather
-                name="menu"
-                size={24}
-                style={styles.iconMenu}
-                onPress={() => setIsVisible(true)}
-              />
+              <Feather name="menu" size={32} style={styles.iconMenu} />
             </TouchableOpacity>
             <View style={styles.dropdown}>
-              <Text style={[styles.dropdownContent, styles.text]}>test 1a</Text>
-              <Text style={[styles.dropdownContent, styles.text]}>teste</Text>
-              <View style={styles.dropdownContent}>
-                {mode === "dark" ? (
-                  <Feather name="moon" size={24} style={styles.text} />
-                ) : (
-                  <Feather name="sun" size={24} style={styles.text} />
-                )}
-                <Text
-                  style={styles.text}
-                  onPress={() => setMode(mode === "dark" ? "light" : "dark")}
+              {actions.map((action, index) => (
+                <TouchableOpacity
+                  key={index}
+                  onPress={action.onPress}
+                  style={styles.dropdownContent}
                 >
-                  Tema
-                </Text>
-              </View>
+                  <Feather name={action.icon} size={24} style={styles.text} />
+                  <Text style={styles.text}>{action.label}</Text>
+                </TouchableOpacity>
+              ))}
             </View>
           </View>
         }

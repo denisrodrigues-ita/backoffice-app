@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { useEffect } from "react";
 import { theme } from "@/theme";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import "react-native-reanimated";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -26,11 +27,13 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider theme={theme}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
         <Stack
           screenOptions={{
             headerShown: false,
           }}
         />
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }
