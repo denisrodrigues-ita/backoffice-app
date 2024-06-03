@@ -6,6 +6,7 @@ import { Feather } from "@expo/vector-icons";
 import { getStyles } from "./styles";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { DdevIcon } from "@/assets/svg";
 
 const Header = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -30,7 +31,14 @@ const Header = () => {
     <SafeAreaView style={styles.safeAreaView}>
       <HeaderUi
         containerStyle={styles.container}
-        leftComponent={<Text>Ddev</Text>}
+        leftComponent={
+          <DdevIcon
+            width={80}
+            height={40}
+            viewBox="0 0 1080 400"
+            fill={theme.colors.primary}
+          />
+        }
         rightComponent={
           <View style={styles.menuView}>
             <TouchableOpacity onPress={() => setIsVisible(!isVisible)}>
