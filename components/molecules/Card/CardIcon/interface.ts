@@ -1,6 +1,6 @@
 import { ThemeOptions } from "@rneui/themed";
 
 export interface CardIconProps {
-  icon: "people";
+  icon: "people" | "checkmark-done";
   theme: ThemeOptions;
 }

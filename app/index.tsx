@@ -9,10 +9,14 @@ const HomeScreen = () => {
   return (
     <View style={{ backgroundColor: theme.colors.secondary, flex: 1 }}>
       <Header />
-      <View style={{ padding: 8 }}>
+      <View style={{ padding: 8, gap: 8 }}>
         <Card.Root>
           <Card.Icon icon="people" theme={theme} />
           <Card.Content content={3} title="Convidados" />
+        </Card.Root>
+        <Card.Root>
+          <Card.Icon icon="checkmark-done" theme={theme} />
+          <Card.Content content={3} title="Confirmados" />
         </Card.Root>
       </View>
     </View>
