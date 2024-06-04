@@ -1,9 +1,9 @@
 export const lightColors = {
   primary: "#30343f",
   secondary: "#fafaff",
-  tertiary: "#e4d9ff",
-  quaternary: "#273469",
-  quinary: "#1e2749",
+  tertiary: "#273469",
+  quaternary: "#1e2749",
+  quinary: "#e4d9ff",
 };
 
 export const darkColors = {

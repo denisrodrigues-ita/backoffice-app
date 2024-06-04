@@ -1,16 +1,25 @@
+import { Card } from "@/components/molecules";
 import { Header } from "@/components/organisms";
-import { Link } from "expo-router";
-import { View, Text } from "react-native";
+import { useTheme } from "@rneui/themed";
+import { View } from "react-native";
 
 const HomeScreen = () => {
+  const { theme } = useTheme();
+
   return (
-    <>
+    <View style={{ backgroundColor: theme.colors.secondary, flex: 1 }}>
       <Header />
-      <View>
-        <Text>Home Screen</Text>
-        <Link href="/login/firstAcess">Login</Link>
+      <View style={{ padding: 8, gap: 8 }}>
+        <Card.Root>
+          <Card.Icon icon="people" theme={theme} />
+          <Card.Content content={3} title="Convidados" />
+        </Card.Root>
+        <Card.Root>
+          <Card.Icon icon="checkmark-done" theme={theme} />
+          <Card.Content content={3} title="Confirmados" />
+        </Card.Root>
       </View>
-    </>
+    </View>
   );
 };
 
