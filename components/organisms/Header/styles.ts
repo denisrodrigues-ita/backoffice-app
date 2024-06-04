@@ -3,15 +3,12 @@ import { StyleSheet } from "react-native";
 
 export const getStyles = (theme: ThemeOptions, isVisible: boolean) =>
   StyleSheet.create({
-    safeAreaView: {
-      backgroundColor: theme.colors.primary,
-      zIndex: 1,
-    },
     container: {
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
       backgroundColor: theme.colors.secondary,
+      zIndex: 1,
     },
     dropdown: {
       flexDirection: "column",
