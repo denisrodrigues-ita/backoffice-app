@@ -34,7 +34,7 @@ const Header = () => {
           width={80}
           height={40}
           viewBox="0 0 1080 400"
-          fill={theme.colors.primary}
+          fill={theme.colors.tertiary}
         />
       }
       rightComponent={
